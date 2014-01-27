@@ -228,7 +228,7 @@ define nginx::resource::location (
   }
 
   $vhost_sanitized = regsubst($vhost, ' ', '_', 'G')
-  $config_file = "${nginx::config::nx_conf_dir}/sites-available/${vhost_sanitized}.conf"
+  $config_file = "${nginx::params::nx_conf_dir}/sites-available/${vhost_sanitized}.conf"
 
   $location_sanitized_tmp = regsubst($location, '\/', '_', 'G')
   $location_sanitized = regsubst($location_sanitized_tmp, '\\', '_', 'G')

@@ -302,8 +302,8 @@ define nginx::resource::vhost (
   validate_array($rewrite_rules)
 
   # Variables
-  $vhost_dir = "${nginx::config::nx_conf_dir}/sites-available"
-  $vhost_enable_dir = "${nginx::config::nx_conf_dir}/sites-enabled"
+  $vhost_dir = "${nginx::params::nx_conf_dir}/sites-available"
+  $vhost_enable_dir = "${nginx::params::nx_conf_dir}/sites-enabled"
   $vhost_symlink_ensure = $ensure ? {
     'absent' => absent,
     default  => 'link',
